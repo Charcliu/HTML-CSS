@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Test-float</title>
+  <style type="text/css">
+    body {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .parent>div:nth-child(1) {
+      width: 50px;
+      height: 100px;
+      background-color: red;
+      float: left;
+    }
+
+    .parent>div:nth-child(2) {
+      width: 50px;
+      height: 100px;
+      background-color: green;
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 设置浮动后的元素会形成BFC（使得内部的元素不会被外部所干扰），并且元素的宽度也不再自适应父元素宽度，而是适应自身内容。 -->
+  <div class="parent">
+    <div>
+      Left
+    </div>
+    <div>
+      Right
+    </div>
+  </div>
+</body>
+
+</html>

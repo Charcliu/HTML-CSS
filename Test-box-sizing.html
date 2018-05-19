@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Test-box-sizing</title>
+  <style type="text/css">
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .parent {
+      width: 100px;
+      height: 100px;
+    }
+
+    .parent>div:nth-child(1) {
+      width: 50px;
+      height: 100%;
+      padding: 0px 5px;
+      border: 5px solid yellow;
+      background-color: red;
+      box-sizing: border-box;
+      float: left;
+    }
+
+    .parent>div:nth-child(2) {
+      width: 50px;
+      height: 100%;
+      padding: 0px 5px;
+      border: 5px solid yellow;
+      background-color: green;
+      box-sizing: border-box;
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- box-sizing用来设置盒子模型
+      标准模型width的长度等于content的宽度；
+      而当将box-sizing的属性值设置成border-box时，
+      盒子模型的width=border+padding+content的总和。 -->
+  <div class="parent">
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+  </div>
+</body>
+
+</html>
