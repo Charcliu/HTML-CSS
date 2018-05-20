@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>水平居中</title>
+  <style type="text/css">
+    /* 父元素一定，子元素为单行内联文本 */
+
+    .parent1 {
+      height: 30px;
+      line-height: 30px;
+    }
+
+    /* 块状元素 */
+
+    .parent2 {
+      height: 50px;
+      position: relative;
+      background: red;
+    }
+
+    .child2 {
+      height: 30px;
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      margin: auto;
+      background: green;
+    }
+
+    /* 通用 */
+
+    .parent3 {
+      height: 50px;
+      background: red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .child3 {
+      height: 30px;
+      background: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent1">
+    <span>Middle</span>
+  </div>
+  <div class="parent2">
+    <div class="child2">Middle</div>
+  </div>
+
+  <div class="parent3">
+    <div class="child3">Middle</div>
+  </div>
+</body>
+
+</html>
