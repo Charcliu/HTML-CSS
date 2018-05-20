@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<!-- 对两边侧栏分别设置宽度，设置定位方式为绝对定位。
+设置两侧栏的top值都为0，设置左侧栏的left值为0， 右侧栏的right值为0。
+对主面板设置左右外边距，margin-left的值为左侧栏的宽度，margin-right的值为右侧栏的宽度。 -->
+
+<head>
+  <title>Layout</title>
+  <style type="text/css">
+    .left,
+    .right {
+      position: absolute;
+      top: 0px;
+      width: 200px;
+      height: 300px;
+    }
+
+    .left {
+      background: green;
+      left: 0px;
+    }
+
+    .right {
+      background: yellow;
+      right: 0px;
+    }
+
+    .middle {
+      margin: 0px 200px;
+      background: red;
+      height: 300px;
+    }
+
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="left">
+
+  </div>
+  <div class="middle">
+
+  </div>
+  <div class="right">
+
+  </div>
+</body>
+
+</html>
