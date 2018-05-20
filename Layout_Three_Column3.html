@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Layout_Three_Column1</title>
+  <style type="text/css">
+    .wapper {
+      overflow: hidden;
+    }
+
+    .middle {
+      width: 100%;
+      float: left;
+    }
+
+    .middle .main {
+      margin: 0 220px;
+      background: red;
+    }
+
+    .left {
+      width: 200px;
+      height: 300px;
+      float: left;
+      background: green;
+      margin-left: -100%;
+    }
+
+    .right {
+      width: 200px;
+      height: 300px;
+      float: left;
+      background: yellow;
+      margin-left: -200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="middle">
+      <div class="main">中间</div>
+    </div>
+    <div class="left">
+      左栏
+    </div>
+    <div class="right">
+      右栏
+    </div>
+  </div>
+</body>
+
+</html>

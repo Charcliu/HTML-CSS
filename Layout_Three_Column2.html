@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Layout_Three_Column1</title>
+  <style type="text/css">
+    .left {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 200px;
+      height: 300px;
+      background: yellow;
+    }
+
+    .right {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      width: 200px;
+      height: 300px;
+      background: green;
+    }
+
+    .middle {
+      height: 300px;
+      margin-left: 200px;
+      margin-right: 200px;
+      background-color: red;
+    }
+
+    body {
+      text-align: center;
+      line-height: 300px;
+      margin: 0px;
+      padding: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 左右两栏使用position进行定位，中间栏使用margin进行定位 -->
+  <div class="left">
+    左栏
+  </div>
+  <div class="middle">
+    中间栏
+  </div>
+  <div class="right">
+    右栏
+  </div>
+</body>
+
+</html>
