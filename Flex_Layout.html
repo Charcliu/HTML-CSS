@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Flex</title>
+  <style type="text/css">
+    /* 容器的属性 */
+
+    .container {
+      display: flex;
+      /* 设置主轴方向row | row-reverse | column | column-reverse; */
+      flex-direction: row;
+      /* 一行放不下设置换行方式flex-wrap: nowrap | wrap | wrap-reverse */
+      flex-wrap: nowrap;
+      /* flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap
+      flex-flow: row nowrap; */
+      /* justify-content属性定义了项目在主轴上的对齐方式。flex-start | flex-end | center | space-between | space-around; */
+      justify-content: center;
+      /* align-items属性定义项目在交叉轴上如何对齐。flex-start | flex-end | center | baseline | stretch; */
+      align-items: center;
+      /* align-items ：在单根轴线和多根都有效，这轴线我理解为是主轴。
+      align-cotennt：在多根轴线有效的时候设置有效，假如align-items和 content都设置了不同的值，
+      那么align-content的值永远被优先使用，无论声明顺序。
+      当flex-wrap设置为wrap时，就出现了多行，这就是所谓的多根轴线。 */
+      align-content: center;
+      height: 100px;
+    }
+
+    .main,
+    .left,
+    .right {
+      width: 100%;
+    }
+
+    /* 项目的属性 */
+
+    .main {
+      background: red;
+      /* order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。 */
+      order: 1;
+      /* flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。 */
+      flex-grow: 1;
+      /* align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。
+      auto | flex-start | flex-end | center | baseline | stretch;
+      默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。 */
+      align-self: flex-end;
+    }
+
+    .left {
+      background: green;
+      flex-grow: 2;
+    }
+
+    .right {
+      background: yellow;
+      flex-grow: 1;
+    }
+
+    .container1,
+    .main1,
+    .left1,
+    .right1 {
+      min-height: 300px;
+    }
+
+    .container1 {
+      display: flex;
+      width: 300px;
+    }
+
+    .main1,
+    .left1,
+    .right1 {
+      width: 200px;
+    }
+
+    .main1 {
+      background: green;
+      /* flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。 */
+      flex-shrink: 1;
+      /* 项目占据的主轴空间（main size） */
+      flex-basis: 100px;
+    }
+
+    .left1 {
+      background: red;
+      flex-shrink: 2;
+    }
+
+    .right1 {
+      background: yellow;
+      flex-shrink: 3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">main</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+  </div>
+
+  <div class="container1">
+    <div class="main1">main</div>
+    <div class="left1">left</div>
+    <div class="right1">right</div>
+  </div>
+</body>
+
+</html>
