@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>双feiyi布局</title>
+  <style type="text/css">
+    .content {
+      padding: 0 230px 0 190px;
+    }
+
+    .main,
+    .left,
+    .right {
+      float: left;
+      min-height: 300px;
+      text-align: center;
+    }
+
+    .main {
+      width: 100%;
+      background: red;
+    }
+
+    .left {
+      width: 190px;
+      margin-left: -100%;
+      background: green;
+    }
+
+    .right {
+      width: 230px;
+      margin-left: -230px;
+      background: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="content">
+        main
+      </div>
+    </div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+  </div>
+</body>
+
+</html>
