@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML 文本格式化</title>
+</head>
+
+<body>
+  <!--
+    <b>	定义粗体文本。
+    <big>	定义大号字。
+    <em>	定义着重文字。
+    <i>	定义斜体字。
+    <small>	定义小号字。
+    <strong>	定义加重语气。
+    <sub>	定义下标字。
+    <sup>	定义上标字。
+    <ins>	定义插入字。
+    <del>	定义删除字。
+  -->
+  <b>定义粗体文字</b>
+  <br />
+  <big>定义大号字</big>
+  <br />
+  <em>定义着重文字</em>
+  <br />
+  <i>定义斜体字</i>
+  <br />
+  <small>定义小号字</small>
+  <br />
+  <strong>定义加重语气</strong>
+  <br />
+  <p>x<sub>2</sub></p>
+  <p>x<sup>2</sup></p>
+  <ins>定义插入字</ins>
+  <br />
+  <del>定义删除字</del>
+  <br />
+  <!--
+    <code>	定义计算机代码文本
+    <kbd>	定义键盘文本
+    <samp>	定义计算机代码示例
+    <var>	定义变量
+    <pre>	定义预格式化文本
+  -->
+  <code>var person = { firstName:"Bill", lastName:"Gates", age:50, eyeColor:"blue" }</code>
+  <br />
+  <kbd>var j = 0;</kbd>
+  <br />
+  <samp>
+    demo.example.com login: Apr 12 09:10:17
+    Linux 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189
+  </samp>
+  <br />
+  <tt>定义打字机代码。</tt>
+  <var>var k = 0;</var>
+  <pre>
+    for(let i = 0;i < 12; i++){
+      console.log(i)
+    }
+  </pre>
+
+  <!--
+    <abbr>	定义缩写或首字母缩略语。
+    <address>	定义文档作者或拥有者的联系信息。
+    <bdo>	定义文本方向。
+    <blockquote>	定义从其他来源引用的节。
+    <dfn>	定义项目或缩略词的定义。
+    <q>	定义短的行内引用。
+    <cite>	定义著作的标题。
+   -->
+
+  <!-- q标签短引用 -->
+  <p>WWF 的目标是：<q>构建人与自然和谐共存的世界。</q></p>
+  <p>以下内容引用自 WWF 的网站：</p>
+  <!-- 长引用 -->
+  <blockquote cite="http://www.worldwildlife.org/who/index.html">
+    五十年来，WWF 一直致力于保护自然界的未来。 世界领先的环保组织，WWF 工作于 100 个国家， 并得到美国一百二十万会员及全球近五百万会员的支持。
+  </blockquote>
+  <!-- abbr标签定义缩写能够为浏览器、翻译系统以及搜索引擎提供有用的信息。 -->
+  <p><abbr title="World Health Organization">WHO</abbr> 成立于 1948 年。</p>
+  <p><dfn title="World Health Organization">WHO</dfn> 成立于 1948 年。</p>
+  <p><dfn><abbr title="World Health Organization">WHO</abbr></dfn> 成立于 1948 年。</p>
+  <p><dfn>WHO</dfn> World Health Organization 成立于 1948 年。</p>\
+  <!-- 联系信息 -->
+  <address>
+  Written by Donald Duck.<br>
+  Visit us at:<br>
+  Example.com<br>
+  Box 564, Disneyland<br>
+  USA
+  </address>
+  <!-- 著作标题 -->
+  <p><cite>The Scream</cite> by Edward Munch. Painted in 1893.</p>
+  <!-- 定义文本方向 -->
+  <bdo dir="rtl">This text will be written from right to left</bdo>
+  <bdo dir="ltr">This text will be written from left to right</bdo>
+</body>
+
+</html>
