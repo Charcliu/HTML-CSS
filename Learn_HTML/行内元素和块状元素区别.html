@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>行内元素和块状元素</title>
+  <style type="text/css">
+    .block {
+      width: 100px;
+      height: 100px;
+      padding: 10px 10px;
+      margin: 10px 10px;
+      background-color: red;
+    }
+
+    .inline {
+      /*不生效*/
+      width: 100px;
+      /*不生效*/
+      height: 100px;
+      /*左右生效，上下不生效*/
+      padding: 20px 20px;
+      /*左右生效，上下不生效*/
+      margin: 20px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 行内、块状元素区别：
+   (1).块级元素会独占一行，其宽度自动填满其父元素宽度
+       行内元素不会独占一行，相邻的行内元素会排列在同一行里，知道一行排不下，才会换行，其宽度随元素的内容而变化
+   (2).一般情况下，块级元素可以设置 width, height属性，行内元素设置width,  height无效(注意：块级元素即使设置了宽度，仍然是独占一行的)
+   (3).块级元素可以设置margin 和 padding.  行内元素的水平方向的padding-left,padding-right,margin-left,margin-right 都产生边距效果，
+       但是竖直方向的padding-top,padding-bottom,margin-top,margin-bottom都不会产生边距效果。（水平方向有效，竖直方向无效） -->
+  <div class="block">块状元素</div>
+  <span class="inline">行内元素</span>
+</body>
+
+</html>
