@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<body>
+
+  <head>
+    <title>Margin折叠</title>
+    <style type="text/css">
+      .first {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        margin: 10px;
+        background-color: red;
+      }
+
+      .second {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        margin: 10px;
+        background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 兄弟之间的margin折叠解决方法
+
+    1.给最后面的兄弟加上浮动
+
+    2.给最后面的元素加上display：inline-block; -->
+    <div class="first"></div>
+    <div class="second"></div>
+  </body>
+</body>
