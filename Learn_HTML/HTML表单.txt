@@ -1,0 +1,42 @@
+<form> 元素
+HTML 表单用于收集用户输入。
+表单元素指的是不同类型的 input 元素、复选框、单选按钮、提交按钮等等。
+
+
+***具体Demo请看 HTML_表单.html***
+
+HTML Input 属性
+value 属性
+  value 属性规定输入字段的初始值：
+readonly 属性
+  readonly 属性规定输入字段为只读（不能修改）：
+disabled 属性
+  disabled 属性规定输入字段是禁用的。
+  被禁用的元素是不可用和不可点击的。
+size 属性
+  size 属性规定输入字段的尺寸（以字符计）：
+maxlength 属性
+  maxlength 属性规定输入字段允许的最大长度：
+autofocus 属性
+  autofocus 属性是布尔属性。
+  如果设置，则规定当页面加载时 <input> 元素应该自动获得焦点。
+min 和 max 属性
+  min 和 max 属性规定 <input> 元素的最小值和最大值。
+  min 和 max 属性适用于如需输入类型：number、range、date、datetime、datetime-local、month、time 以及 week。
+multiple 属性
+  multiple 属性是布尔属性。
+  如果设置，则规定允许用户在 <input> 元素中输入一个以上的值。
+  multiple 属性适用于以下输入类型：email 和 file。
+pattern 属性
+  pattern 属性规定用于检查 <input> 元素值的正则表达式。
+  pattern 属性适用于以下输入类型：text、search、url、tel、email、and password。
+placeholder 属性
+  placeholder 属性规定用以描述输入字段预期值的提示（样本值或有关格式的简短描述）。
+  该提示会在用户输入值之前显示在输入字段中。
+  placeholder 属性适用于以下输入类型：text、search、url、tel、email 以及 password。
+required 属性
+  required 属性是布尔属性。
+  如果设置，则规定在提交表单之前必须填写输入字段。
+  required 属性适用于以下输入类型：text、search、url、tel、email、password、date pickers、number、checkbox、radio、and file.
+step 属性
+  step 属性规定 <input> 元素的合法数字间隔。(步长)

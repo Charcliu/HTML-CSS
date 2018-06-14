@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML表单</title>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <!-- 输入限制
+  这里列出了一些常用的输入限制（其中一些是 HTML5 中新增的）：
+
+  属性	描述
+  disabled	规定输入字段应该被禁用。
+  max	规定输入字段的最大值。
+  maxlength	规定输入字段的最大字符数。
+  min	规定输入字段的最小值。
+  pattern	规定通过其检查输入值的正则表达式。
+  readonly	规定输入字段为只读（无法修改）。
+  required	规定输入字段是必需的（必需填写）。
+  size	规定输入字段的宽度（以字符计）。
+  step	规定输入字段的合法数字间隔。
+  value	规定输入字段的默认值。 -->
+  <h1>Input形态：</h1> text
+  <input type="text"/> radio
+  <input type="radio" /> submit
+  <input type="submit" /> password
+  <input type="password" autofocus/> checkbox
+  <input type="checkbox" /> button
+  <input type="button" value="button" /> color
+  <input type="color" /> date
+  <input type="date" /> datetime
+  <input type="datetime" /> datetime-local
+  <input type="datetime-local" /> email
+  <input type="email" /> month
+  <input type="month" /> number
+  <input type="number" min="0" max="100" step="10" value="30" /> range
+  <input type="range" /> search
+  <input type="search" /> tel
+  <input type="tel" /> time
+  <input type="time" /> url
+  <input type="url" /> week
+  <input type="week" />
+  <hr />
+  <select name="cars">
+      <option value="volvo" selected>Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+  <br />
+  <textarea name="message" rows="10" cols="30">The cat was playing in the garden. </textarea>
+  <br />
+  <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+  <br />
+  <!-- 通过 <datalist> 设置预定义值的 <input> 元素： -->
+  <input list="browsers">
+  <datalist id="browsers">
+     <option value="Internet Explorer">
+     <option value="Firefox">
+     <option value="Chrome">
+     <option value="Opera">
+     <option value="Safari">
+  </datalist>
+</body>
+
+</html>
