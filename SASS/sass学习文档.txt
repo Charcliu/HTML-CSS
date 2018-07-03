@@ -47,3 +47,27 @@ $heightlight_border: 1px solid $nav_color;
     background-color: #RRR;
   }
 }
+
+###父选择器的标识符&
+
+#content a{
+  color: green;
+  :hover{
+    color: red;
+  }
+}
+解析为
+#content a{ color : green }
+#content a :hover { color : red }
+a标签的子元素hover的时候都被渲染为红色，不符合设计初心（只是a标签被hover的时候，渲染为红色）。
+
+#content a{
+  color: green;
+  &:hover{
+    color: red;
+  }
+}
+解析为
+#content a{ color : green }
+#content a:hover { color : red }
+不会像后代选择器那样进行拼接，而是&被父选择器直接替换
