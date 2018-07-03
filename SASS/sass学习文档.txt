@@ -1,0 +1,49 @@
+###变量声明
+
+$nav_color: #F90;
+nav{
+  $width: 10px;
+  width: $width;
+  color: $nav_color;
+}
+*** 变量声明分为内部声明和外部声明
+    1. 内部声明只能在当前{}规则块内部使用
+    2. 可以在其他地方使用
+
+###变量引用(变量内部使用变量)
+
+$nav_color: #F90;
+$heightlight_border: 1px solid $nav_color;
+.selected{
+  border: $heightlight_border;
+}
+
+
+###嵌套CSS规则
+
+#content article h1 { color: #333 }
+#content article p { margin-bottom: 1.4em }
+#content aside { background-color: #EEE }
+
+#content{
+  article{
+    h1{
+      color: #333;
+    }
+    p{
+      margin-bottom: 1.4em;
+    }
+  }
+  aside{
+    background-color: #EEE;
+  }
+}
+
+并且也可以这样子做
+
+#content{
+  background-color: #EEE;
+  p{
+    background-color: #RRR;
+  }
+}
