@@ -71,3 +71,76 @@ a标签的子元素hover的时候都被渲染为红色，不符合设计初心�
 #content a{ color : green }
 #content a:hover { color : red }
 不会像后代选择器那样进行拼接，而是&被父选择器直接替换
+
+###群组选择器的嵌套
+
+.container h1, .container h2, .container h3 { margin-bottom: .8em }
+.container {
+  h1, h2, h3 { margin-bottom: .8em; }
+}
+
+nav a, aside a {color: blue}
+nav, aside {
+  a {color: blue}
+}
+
+###子组合选择器和同层组合选择器：>、+和~;
+
+article section { color: red; }                 article下的所有命中section选择器的元素
+article > section { border: 1px solid green; }  选择article下紧跟着的子元素中命中section选择器的元素
+
+同层相邻组合选择器+选择header元素后紧跟的p元素：
+header + p { font-size: 1.1em }
+
+同层全体组合选择器~，选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素：
+article ~ article { border-top: 1px dashed #ccc }
+
+
+###Example
+article {
+  ~ article { border-top: 1px dashed #ccc }
+  > section { background: #eee }
+  dl > {
+    dt { color: #333 }
+    dd { color: #555 }
+  }
+  nav + & { margin-top: 0 }
+}
+
+sass会如你所愿地将这些嵌套规则一一解开组合在一起：
+
+article ~ article { border-top: 1px dashed #ccc }
+article > footer { background: #eee }
+article dl > dt { color: #333 }
+article dl > dd { color: #555 }
+nav + article { margin-top: 0 }
+
+###嵌套属性
+section {
+  border-color: red;
+  border-width: 1px;
+  border-style: solid;
+}
+
+section {
+  border {
+    color: red;
+    width: 1px;
+    style: solid;
+  }
+}
+
+nav {
+  border: 1px solid #ccc {
+  left: 0px;
+  right: 0px;
+  }
+}
+
+这比下边这种同等样式的写法要好：
+
+nav {
+  border: 1px solid #ccc;
+  border-left: 0px;
+  border-right: 0px;
+}
