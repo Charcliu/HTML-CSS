@@ -1,4 +1,4 @@
-#变量声明
+\#变量声明
 
 $nav_color: #F90;
 nav{
@@ -6,11 +6,11 @@ nav{
   width: $width;
   color: $nav_color;
 }
-*** 变量声明分为内部声明和外部声明
+\*\*\* 变量声明分为内部声明和外部声明
     1. 内部声明只能在当前{}规则块内部使用
     2. 可以在其他地方使用
 
-#变量引用(变量内部使用变量)
+\#变量引用(变量内部使用变量)
 
 $nav_color: #F90;
 $heightlight_border: 1px solid $nav_color;
@@ -18,14 +18,13 @@ $heightlight_border: 1px solid $nav_color;
   border: $heightlight_border;
 }
 
+\#嵌套CSS规则
 
-#嵌套CSS规则
+\#content article h1 { color: #333 }
+\#content article p { margin-bottom: 1.4em }
+\#content aside { background-color: #EEE }
 
-#content article h1 { color: #333 }
-#content article p { margin-bottom: 1.4em }
-#content aside { background-color: #EEE }
-
-#content{
+\#content{
   article{
     h1{
       color: #333;
@@ -41,38 +40,38 @@ $heightlight_border: 1px solid $nav_color;
 
 并且也可以这样子做
 
-#content{
+\#content{
   background-color: #EEE;
   p{
     background-color: #RRR;
   }
 }
 
-#父选择器的标识符&
+\#父选择器的标识符&
 
-#content a{
+\#content a{
   color: green;
   :hover{
     color: red;
   }
 }
 解析为
-#content a{ color : green }
-#content a :hover { color : red }
+\#content a{ color : green }
+\#content a :hover { color : red }
 a标签的子元素hover的时候都被渲染为红色，不符合设计初心（只是a标签被hover的时候，渲染为红色）。
 
-#content a{
+\#content a{
   color: green;
   &:hover{
     color: red;
   }
 }
 解析为
-#content a{ color : green }
-#content a:hover { color : red }
+\#content a{ color : green }
+\#content a:hover { color : red }
 不会像后代选择器那样进行拼接，而是&被父选择器直接替换
 
-#群组选择器的嵌套
+\#群组选择器的嵌套
 
 .container h1, .container h2, .container h3 { margin-bottom: .8em }
 .container {
@@ -84,7 +83,7 @@ nav, aside {
   a {color: blue}
 }
 
-#子组合选择器和同层组合选择器：>、+和~;
+\#子组合选择器和同层组合选择器：>、+和~;
 
 article section { color: red; }                 article下的所有命中section选择器的元素
 article > section { border: 1px solid green; }  选择article下紧跟着的子元素中命中section选择器的元素
@@ -95,17 +94,17 @@ header + p { font-size: 1.1em }
 同层全体组合选择器~，选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素：
 article ~ article { border-top: 1px dashed #ccc }
 
-
-#Example
+\#Example
 article {
   ~ article { border-top: 1px dashed #ccc }
-  > section { background: #eee }
-  dl > {
-    dt { color: #333 }
-    dd { color: #555 }
-  }
-  nav + & { margin-top: 0 }
-}
+
+> section { background: #eee }
+>   dl > {
+>     dt { color: #333 }
+>     dd { color: #555 }
+>   }
+>   nav + & { margin-top: 0 }
+> }
 
 sass会如你所愿地将这些嵌套规则一一解开组合在一起：
 
@@ -115,7 +114,7 @@ article dl > dt { color: #333 }
 article dl > dd { color: #555 }
 nav + article { margin-top: 0 }
 
-#嵌套属性
+\#嵌套属性
 section {
   border-color: red;
   border-width: 1px;
@@ -145,13 +144,14 @@ nav {
   border-right: 0px;
 }
 
-#导入SASS文件
+\#导入SASS文件
+
 <!-- @import "***" 导入sass文件 和css import不同，css import只有执行到import时才导入，sass中的import在生成css文件时就加载进来了。 -->
 
-#SASS局部文件
-局部SASS 使用_开头命名sass文件约定为局部文件，编译不会单独解析为css。
+\#SASS局部文件
+局部SASS 使用\_开头命名sass文件约定为局部文件，编译不会单独解析为css。
 
-#默认变量值
+\#默认变量值
 $bgColor: red;
 $bgColor: green;
 div {
@@ -176,7 +176,7 @@ div {
   background-color: red;
 }
 
-#嵌套导入
+\#嵌套导入
 
 common.scss
 aside {
@@ -195,6 +195,12 @@ div {
   }
 }
 
-#原生CSS导入
+\#原生CSS导入
 你不能用sass的@import直接导入一个原始的css文件，因为sass会认为你想用css原生的@import。
 但是，因为sass的语法完全兼容css，所以你可以把原始的css文件改名为.scss后缀，即可直接导入了。
+
+\#静默注释
+body {
+  color: #333; // 这种注释内容不会出现在生成的css文件中
+  padding: 0; /_ 这种注释内容会出现在生成的css文件中 _/
+}
