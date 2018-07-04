@@ -144,3 +144,57 @@ nav {
   border-left: 0px;
   border-right: 0px;
 }
+
+###导入SASS文件
+<!-- @import "***" 导入sass文件 和css import不同，css import只有执行到import时才导入，sass中的import在生成css文件时就加载进来了。 -->
+
+###SASS局部文件
+局部SASS 使用_开头命名sass文件约定为局部文件，编译不会单独解析为css。
+
+###默认变量值
+$bgColor: red;
+$bgColor: green;
+div {
+  background-color: $bgColor;
+}
+渲染为
+div {
+  background-color: green;
+}
+
+common.scss
+$bgColor: red;
+
+home.css
+$bgColor: green !default;
+div {
+  background-color: $bgColor;
+}
+
+渲染为
+div {
+  background-color: red;
+}
+
+###嵌套导入
+
+common.scss
+aside {
+  border: 1px solid red;
+}
+
+home.css
+div {
+  @import "common.scss"
+}
+
+渲染为
+div {
+  aside {
+    border: 1px solid red;
+  }
+}
+
+###原生CSS导入
+你不能用sass的@import直接导入一个原始的css文件，因为sass会认为你想用css原生的@import。
+但是，因为sass的语法完全兼容css，所以你可以把原始的css文件改名为.scss后缀，即可直接导入了。
