@@ -296,3 +296,35 @@ a {
 
 a { @include link-colors(red) }
 都会被赋值为red
+
+
+###SASS继承
+.error {
+  border: 1px solid red;
+  background-color: green;
+}
+.seriousError {
+  @extend .error;
+  border-width: 3px;
+}
+被class = "seriousError"修饰的HTML元素最终会渲染为 class = "seriousError error"
+
+***注意⚠️***
+.seriousError不仅会继承.error的属性，任何根.error有关的组合器样式也会被.seriousError以组合器的形式继承
+
+.error a {  //应用到.seriousError a
+  color: red;
+  font-weight: 100;
+}
+h1.error{   //应用到h1.seriousError
+  font-size: 1.2em;
+}
+
+###继承HTML元素的样式（不包含浏览器默认样式）
+.disable {  //继承a元素的样式
+  color: gray;
+  @extend a;
+}
+
+###SASS继承原理
+@extend背后最基本的想法是，如果.seriousError @extend .error， 那么样式表中的任何一处.seriousError都用.error.seriousError这一选择器组进行替换。
