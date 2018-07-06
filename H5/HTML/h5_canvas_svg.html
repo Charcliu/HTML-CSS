@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>H5_canvas</title>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <!-- canvas -->
+  <canvas id="myCanvas_rectangle" width="200" height="100"></canvas>
+  <canvas id="myCanvas_line" width="200" height="100"></canvas>
+  <canvas id="myCanvas_circle" width="200" height="100"></canvas>
+  <canvas id="myCanvas_linear_gradient" width="200" height="100"></canvas>
+  <!-- svg -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+    <polygon points="100,10 40,180 190,60 10,60 160,180"
+    style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+  </svg>
+</body>
+<script type="text/javascript">
+  var c = document.getElementById("myCanvas_rectangle");
+  var cxt = c.getContext("2d");
+  cxt.fillStyle = "#FF0000";
+  cxt.fillRect(0, 0, 150, 75);
+
+  var c = document.getElementById("myCanvas_line");
+  var cxt = c.getContext("2d");
+  cxt.moveTo(10, 10);
+  cxt.lineTo(150, 50);
+  cxt.lineTo(10, 50);
+  cxt.stroke();
+
+  var c = document.getElementById("myCanvas_circle");
+  var cxt = c.getContext("2d");
+  cxt.fillStyle = "#FF0000";
+  cxt.beginPath();
+  cxt.arc(70, 18, 15, 0, Math.PI * 2, true);
+  cxt.closePath();
+  cxt.fill();
+
+  var c = document.getElementById("myCanvas_linear_gradient");
+  var cxt = c.getContext("2d");
+  var grd = cxt.createLinearGradient(0, 0, 175, 50);
+  grd.addColorStop(0, "#FF0000");
+  grd.addColorStop(1, "#00FF00");
+  cxt.fillStyle = grd;
+  cxt.fillRect(0, 0, 175, 50);
+</script>
+
+</html>
