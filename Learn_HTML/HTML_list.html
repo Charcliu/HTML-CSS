@@ -117,5 +117,28 @@
     <dd>以视觉方式显示信息的装置 ... ...</dd>
   </dl>
 </body>
+<script type="text/javascript">
+  // 典型的内存泄露
+  let leakObject = null;
+  let count = 0;
+
+  setInterval(function testMemoryLeak() {
+    const originLeakObject = leakObject;
+
+    const unused = function() {
+      if (originLeakObject) {
+        console.log("originLeakObject")
+      }
+    }
+
+    leakObject = {
+      count: String(count++),
+      leakStr: new Array(1e7).join("*"),
+      leakMethod: function() {
+        console.log('leakMessage')
+      }
+    }
+  }, 1000)
+</script>
 
 </html>
