@@ -124,6 +124,7 @@
 
   setInterval(function testMemoryLeak() {
     const originLeakObject = leakObject;
+    console.log(originLeakObject);
 
     const unused = function() {
       if (originLeakObject) {
