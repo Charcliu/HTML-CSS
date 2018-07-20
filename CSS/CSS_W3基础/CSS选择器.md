@@ -40,7 +40,7 @@
 
 ### 选择器分组
 
--   > ** no grouping **
+-    no grouping
 
 -   > h1 {color:blue;}
     > h2 {color:blue;}
@@ -49,7 +49,7 @@
     > h5 {color:blue;}
     > h6 {color:blue;}
 
--   > ** grouping **
+-    grouping
 
 -   > h1, h2, h3, h4, h5, h6 {color:blue;}
 
@@ -59,7 +59,7 @@
     后代选择器可以选择作为某元素后代的元素。
 -   > h1 em {color:red;}
 
-  >  ````
+````
     派生选择器
     通过依据元素在其位置的上下文关系来定义样式，你可以使标记更加简洁。
     li strong {
