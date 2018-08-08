@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+        div.clip {
+            width: 260px;
+            text-overflow: clip;
+            overflow: hidden;
+            white-space: nowrap;
+            text-shadow: 2px 2px 2px red;
+        }
+
+        div.ellipsis {
+            width: 260px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        p {
+            width: 200px;
+            padding: 5px;
+            background-color: #f0f3f9;
+            font-size: 14px;
+        }
+
+        .word-break {
+            word-break: normal;
+        }
+
+        .word-all {
+            word-break: break-all;
+        }
+
+        .word-keep {
+            word-break: keep-all;
+        }
+
+        .word-warp {
+            word-wrap: normal;
+        }
+
+        .word-warp-break {
+            word-wrap: break-word;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <div class="clip">我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本</div>
+    <div class="ellipsis">我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本我是很长的文本</div>
+
+
+    <p class="word-break">这个段落设置了word-break:normal。非中日韩文词间不会断行但日韩文词间换行。</p>
+    <p class="word-all">这个段落设置了word-break:break-all。非中日韩文词间不会断行但日韩文词间换行。</p>
+    <p class="word-keep">这个段落设置了word-break:keep-all。非中日韩文以及中日韩文的词间都不换行。</p>
+
+    <p class="word-warp">这个段落设置了word-warp:normal。FluentlyFluentlyFluentlyFluentlyFluentlyFluentlyFluentlyFluently非中日韩文词间不会断行但日韩文词间换行。</p>
+    <p class="word-warp-break">这个段落设置了word-warp:break-wrod。FluentlyFluentlyFluentlyFluentlyFluentlyFluentlyFluentlyFluently非中日韩文词间不会断行但日韩文词间换行。</p>
+
+
+    <p class="nowrap">这个段落设置了white-space: nowrap;。不管文字有多长都不会换行，除非添加换行标签
+        <br/>。
+        <br/>前面有个换行标签</p>
+
+</body>
+
+</html>
