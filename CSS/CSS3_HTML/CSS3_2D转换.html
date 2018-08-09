@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./eleIndex.css">
+    <style lang="">
+        #app {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .rotateSlider {
+            margin-top: 10px;
+        }
+
+        section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .flexRotate {
+            flex-basis: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="app">
+        <section>
+            <div class="flexRotate">
+                <div :style="rotateObj">Rotate</div>
+                <div class="rotateSlider">
+                    旋转角度：
+                    <el-slider v-model="rotateAngle" :max='360'></el-slider>
+                </div>
+            </div>
+            <div class="flexRotate">
+                <div :style="translateObj">Translate</div>
+                <div class="translateSlider">
+                    X轴移动距离：
+                    <el-slider v-model="translateX" :max='360'></el-slider>
+                    Y轴移动距离：
+                    <el-slider v-model="translateY" :max='360'></el-slider>
+                </div>
+            </div>
+            <div class="flexRotate">
+                <div :style="scaleObj">Scale</div>
+                <div class="scaleSlider">
+                    X轴缩放：
+                    <el-slider v-model="scaleX" :max='10'></el-slider>
+                    Y轴缩放：
+                    <el-slider v-model="scaleY" :max='10'></el-slider>
+                </div>
+            </div>
+            <div class="flexRotate">
+                <div :style="skewObj">Skew</div>
+                <div class="skewSlider">
+                    X轴翻转：
+                    <el-slider v-model="skewX" :max='180'></el-slider>
+                    Y轴翻转：
+                    <el-slider v-model="skewY" :max='180'></el-slider>
+                </div>
+            </div>
+        </section>
+        <hr/> 统一设置所有旋转元素旋转基点：
+        <div>
+            设置元素X轴旋转基点：
+            <el-slider v-model="xOrigin" :max='100'></el-slider>
+            设置元素Y轴旋转基点：
+            <el-slider v-model="yOrigin" :max='100'></el-slider>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="./eleIndex.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                rotateAngle: 0,
+                xOrigin: 50,
+                yOrigin: 50,
+                translateX: 0,
+                translateY: 0,
+                scaleX: 1,
+                scaleY: 1,
+                skewX: 0,
+                skewY: 0
+            },
+            mounted() {},
+            computed: {
+                rotateObj: function () {
+                    return {
+                        transform: 'rotate(' + this.rotateAngle + 'deg)',
+                        // 改变旋转点位置 50% 50%为中心点
+                        '-webkit-transform-origin': this.xOrigin + '% ' + this.yOrigin + '%',
+                        width: '100px',
+                        height: '100px',
+                        backgroundColor: 'red',
+                        border: '2px solid yellow',
+                        'line-height': '100px',
+                        margin: 'auto'
+                    }
+                },
+                translateObj: function () {
+                    return {
+                        transform: 'translate(' + this.translateX + 'px,' + this.translateY + 'px)',
+                        // 改变旋转点位置 50% 50%为中心点
+                        '-webkit-transform-origin': this.xOrigin + '% ' + this.yOrigin + '%',
+                        width: '100px',
+                        height: '100px',
+                        backgroundColor: 'red',
+                        border: '2px solid yellow',
+                        'line-height': '100px',
+                        margin: 'auto'
+                    }
+                },
+                scaleObj: function () {
+                    return {
+                        transform: 'scale(' + this.scaleX + ',' + this.scaleY + ')',
+                        // 改变旋转点位置 50% 50%为中心点
+                        '-webkit-transform-origin': this.xOrigin + '% ' + this.yOrigin + '%',
+                        width: '100px',
+                        height: '100px',
+                        backgroundColor: 'red',
+                        border: '2px solid yellow',
+                        'line-height': '100px',
+                        margin: 'auto'
+                    }
+                },
+                skewObj: function () {
+                    return {
+                        transform: 'skew(' + this.skewX + 'deg,' + this.skewY + 'deg)',
+                        // 改变旋转点位置 50% 50%为中心点
+                        '-webkit-transform-origin': this.xOrigin + '% ' + this.yOrigin + '%',
+                        width: '100px',
+                        height: '100px',
+                        backgroundColor: 'red',
+                        border: '2px solid yellow',
+                        'line-height': '100px',
+                        margin: 'auto'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
