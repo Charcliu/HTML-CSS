@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        @keyframes change {
+            0% {
+                background: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background: yellow;
+                transform: rotate(30deg);
+                left: 0px;
+                top: 0px;
+            }
+            50% {
+                background: blue;
+                transform: rotate(0deg);
+                left: 800px;
+                top: 0px;
+            }
+            /* 75% {
+                transform: rotate(-180deg);
+                left: 200px;
+                top: 0px;
+            } */
+            100% {
+                background: red;
+                transform: rotate(-360deg);
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        .main {
+            width: 150px;
+            height: 100px;
+            margin-top: 20%;
+            border-radius: 10%;
+            text-align: center;
+            line-height: 100px;
+            background-color: red;
+            position: relative;
+            animation: change 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="main">CSS3动画</div>
+    <script src="" async defer></script>
+</body>
+
+</html>
