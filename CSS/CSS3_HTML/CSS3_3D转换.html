@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSS3D转换</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./eleIndex.css">
+    <style>
+        .rotate3D {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .rotate3D>div {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="app">
+        <div class="rotate3D">
+            <div>
+                X轴3D旋转：
+                <div :style="rotate3d_X"></div>
+                <el-slider v-model="rotate3dX" :max='360'></el-slider>
+            </div>
+            <div>
+                Y轴3D旋转：
+                <div :style="rotate3d_Y"></div>
+                <el-slider v-model="rotate3dY" :max='360'></el-slider>
+            </div>
+            <div>
+                Z轴3D旋转：
+                <div :style="rotate3d_Z"></div>
+                <el-slider v-model="rotate3dZ" :max='360'></el-slider>
+            </div>
+        </div>
+        <div class="translate3D">
+            <div>
+                3D Translate：
+                <div :style="translate3D"></div>
+                <el-slider v-model="translate3dX" :max='360'></el-slider>
+                <el-slider v-model="translate3dY" :max='360'></el-slider>
+                <el-slider v-model="translate3dZ" :max='360'></el-slider>
+            </div>
+        </div>
+        <div class="scale3D">
+            <div>
+                3D Scale：
+                <div :style="scale3D"></div>
+                <el-slider v-model="scale3dX" :max='360'></el-slider>
+                <el-slider v-model="scale3dY" :max='360'></el-slider>
+                <el-slider v-model="scale3dZ" :max='360'></el-slider>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="./eleIndex.js"></script>
+    <script>
+        var app = new Vue({
+            el: '.app',
+            data: {
+                rotate3dX: 0,
+                rotate3dY: 0,
+                rotate3dZ: 0,
+                translate3dX: 0,
+                translate3dY: 0,
+                translate3dZ: 0,
+                scale3dX: 1,
+                scale3dY: 1,
+                scale3dZ: 1
+            },
+            computed: {
+                rotate3d_X: function () {
+                    return {
+                        width: '100px',
+                        height: '100px',
+                        'background-color': 'red',
+                        transform: 'rotateX(' + this.rotate3dX + 'deg)'
+                    }
+                },
+                rotate3d_Y: function () {
+                    return {
+                        width: '100px',
+                        height: '100px',
+                        'background-color': 'red',
+                        transform: 'rotateY(' + this.rotate3dY + 'deg)'
+                    }
+                },
+                rotate3d_Z: function () {
+                    return {
+                        width: '100px',
+                        height: '100px',
+                        'background-color': 'red',
+                        transform: 'rotateZ(' + this.rotate3dZ + 'deg)'
+                    }
+                },
+                translate3D: function () {
+                    return {
+                        width: '100px',
+                        height: '100px',
+                        'background-color': 'red',
+                        transform: 'translate3d(' + this.translate3dX + 'px,' + this.translate3dY + 'px,' +
+                            this.translate3dZ + 'px)'
+                    }
+                },
+                scale3D: function () {
+                    return {
+                        width: '100px',
+                        height: '100px',
+                        'background-color': 'red',
+                        transform: 'scale3d(' + this.scale3dX + ',' + this.scale3dY + ',' +
+                            this.scale3dZ + ')'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
