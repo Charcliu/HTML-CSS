@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        .content {
+            width: 500px;
+            height: 200px;
+            position: fixed;
+            background-color: #fff;
+            top: 50%;
+            margin-top: -100px;
+            left: 50%;
+            margin-left: -250px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 40px red;
+            z-index: 2;
+            display: none;
+        }
+
+        @keyframes fadein {
+            0% {
+                left: 118%;
+            }
+            50% {
+                left: 48%;
+            }
+            75% {
+                left: 52%
+            }
+            100% {
+                left: 50%;
+            }
+        }
+
+        .shadow {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background-color: gray;
+            opacity: .7;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            display: none;
+        }
+
+        .show {
+            color: #fff;
+            cursor: pointer;
+            border: 1px solid red;
+            border-radius: 5px;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            background-color: red;
+            line-height: 50px;
+            outline: 1px solid orange;
+            outline-offset: 5px;
+            margin: 10px 0px 0px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="show" id="show">侧框进入</div>
+    <div class="shadow" id="shadow"></div>
+    <div class="content" id="content"></div>
+    <script src="" async defer></script>
+    <script>
+        document.getElementById("show").onclick = function () {
+            document.getElementById("content").style.animation = "fadein .8s";
+            document.getElementById("content").style.display = "block";
+            document.getElementById("shadow").style.display = "block";
+        }
+
+        document.body.onclick = function (event) {
+            console.log(event.target.className);
+            if (event.target.className !== "content" && event.target.className !== "show") {
+                document.getElementById("content").style.animation = "";
+                document.getElementById("content").style.display = "none";
+                document.getElementById("shadow").style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
