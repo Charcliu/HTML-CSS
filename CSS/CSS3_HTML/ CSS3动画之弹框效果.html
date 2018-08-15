@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .popWidnow {
+            position: fixed;
+            width: 500px;
+            height: 300px;
+            background-color: #333;
+            top: 50%;
+            left: 50%;
+            margin-left: -250px;
+            margin-top: -150px;
+            border: 2px solid orange;
+            border-radius: 5px;
+            /* animation: pop .5s; */
+            /* animation-iteration-count: infinite; */
+            animation-direction: alternate;
+            display: none;
+        }
+
+        @keyframes pop {
+            0% {}
+            25% {
+                width: 600px;
+                height: 400px;
+                margin-left: -300px;
+                margin-top: -200px;
+            }
+            75% {
+                width: 400px;
+                height: 200px;
+                margin-left: -200px;
+                margin-top: -100px;
+            }
+            100% {}
+        }
+    </style>
+</head>
+
+<body>
+    Click Body To Pop Window!!!
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="popWidnow" id="popWidnow"></div>
+    <script>
+        document.body.onclick = function () {
+            document.getElementById("popWidnow").style.display = "block";
+            document.getElementById("popWidnow").style.animation = "pop .5s";
+        }
+    </script>
+</body>
+
+</html>
